@@ -20,6 +20,7 @@ BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 
 DEVICE_PATH := device/essential/mata
 
@@ -96,9 +97,11 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_SOURCE := kernel/essential/msm8998
 TARGET_KERNEL_CONFIG := lineageos_mata_defconfig
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := proton
-TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-$(TARGET_KERNEL_CLANG_VERSION)
+
+
+# Kernel additional flags
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -117,7 +120,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Recovery
-TARGET_RECOVERY_DEVICE_MODULES := android.hidl.allocator@1.0.recovery libhidlmemory.recovery
+TARGET_RECOVERY_DEVICE_MODULES := android.hidl.allocator@1.0.recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mata
 TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/recovery.wipe
 

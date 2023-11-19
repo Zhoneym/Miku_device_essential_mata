@@ -16,3 +16,8 @@
 
 PRODUCT_MAKEFILES += \
     device/essential/mata/miku_mata.mk
+
+COMMON_LUNCH_CHOICES := \
+     miku_mata-user \
+     miku_mata-userdebug \
+     miku_mata-eng

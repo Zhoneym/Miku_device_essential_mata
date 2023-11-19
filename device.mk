@@ -95,7 +95,6 @@ PRODUCT_PACKAGES_DEBUG += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor \
     libbt-vendor \
-    libbthost_if \
     vendor.qti.hardware.btconfigstore@1.0 \
     vendor.qti.hardware.btconfigstore@1.0.vendor
 
@@ -396,9 +395,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service.pixel
 
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
 
 # Update engine
 PRODUCT_PACKAGES += \
@@ -442,7 +438,6 @@ PRODUCT_PACKAGES += \
     hostapd \
     WifiOverlay \
     hostapd_cli \
-    libqsap_sdk \
     libwifi-hal-qcom \
     libwpa_client \
     wpa_supplicant \
