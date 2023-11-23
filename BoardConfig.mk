@@ -18,6 +18,7 @@ DEVICE_PATH := device/essential/mata
 
 # BUILD_BROKEN_*
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_DUP_RULES := true
 
 # Platform
 TARGET_ARCH := arm64
@@ -79,12 +80,13 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=mata user_debug=31 ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=2048 androidboot.configfs=true
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3
-BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.boot_devices=soc/1da4000.ufshc androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += loop.max_part=7
+BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/1da4000.ufshc
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_SOURCE := kernel/essential/msm8998
-TARGET_KERNEL_CONFIG := lineageos_mata_defconfig
+TARGET_KERNEL_CONFIG := miku_mata_defconfig
 
 # Kernel additional flags
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
@@ -106,7 +108,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Recovery
-TARGET_RECOVERY_DEVICE_MODULES := android.hidl.allocator@1.0.recovery libhidlmemory.recovery
+TARGET_RECOVERY_DEVICE_MODULES := android.hidl.allocator@1.0.recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.mata
 TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/recovery.wipe
 

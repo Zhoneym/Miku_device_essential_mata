@@ -17,7 +17,7 @@
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     device/essential/mata/overlay \
-    device/essential/mata/overlay-lineage
+    device/essential/mata/overlay-miku
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # AAPT
@@ -219,15 +219,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.mata
 
-# LiveDisplay native
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm \
-    vendor.lineage.livedisplay@2.0-service-sysfs
-
-# Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
 # Media
 PRODUCT_COPY_FILES += \
     device/essential/mata/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
@@ -323,9 +314,8 @@ PRODUCT_COPY_FILES += \
 
 # Protobuf
 PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-vendorcompat \
-    libprotobuf-cpp-lite-vendorcompat
-
+    libprotobuf-cpp-full-3.9.1-vendorcompat \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat
 # QCOM
 PRODUCT_COPY_FILES += \
     device/essential/mata/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml
@@ -353,8 +343,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.0.vendor \
     android.hardware.radio.config@1.0.vendor \
-    android.hardware.secure_element@1.2.vendor \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat
+    android.hardware.secure_element@1.2.vendor 
 
 # Seccomp
 PRODUCT_COPY_FILES += \
@@ -401,18 +390,10 @@ PRODUCT_COPY_FILES += \
     device/essential/mata/configs/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json \
     device/essential/mata/adb_keys:root/adb_keys
 
-# TimeKeep
-PRODUCT_PACKAGES += \
-    TimeKeep \
-    timekeep
 
 # Touchscreen
 PRODUCT_PACKAGES += \
     libtinyxml2
-
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
 
 # Update engine
 PRODUCT_PACKAGES += \
@@ -429,7 +410,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service
+    android.hardware.vibrator@1.2-service.mata
 
 # VNDK
 PRODUCT_COPY_FILES += \
@@ -452,7 +433,7 @@ PRODUCT_COPY_FILES += \
     device/essential/mata/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service.legacy \
+    android.hardware.wifi-service-lazy \
     hostapd \
     WifiOverlay \
     hostapd_cli \
