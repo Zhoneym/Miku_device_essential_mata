@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2018-2019 The LineageOS Project
+     Copyright (C) 2021-2022 Miku UI
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,15 +17,12 @@
 -->
 
 <resources>
-    <!-- Device specific settings -->
-    <string name="device_settings_app_name">Advanced settings</string>
-    
-    <string name="touchscreen_settings_title">Touchscreen</string>
-    <string name="touchscreen_settings_summary">Grip rejection and smoothing</string>
+    <string name="touchscreen_settings_title">触摸设置</string>
+    <string name="touchscreen_settings_summary">调整防误触与触摸阻尼</string>
 
-    <string name="touchscreen_grip_rej_title">Enable grip rejection</string>
-    <string name="touchscreen_grip_rej_summary">Detect and reject touch input near panel edge</string>
+    <string name="touchscreen_grip_rej_title">启用边缘防误触</string>
+    <string name="touchscreen_grip_rej_summary">防止意外摸到边缘而出现触摸操作</string>
 
-    <string name="touchscreen_smoothness_title">Smoothness</string>
-    <string name="touchscreen_smoothness_summary">Smoothness level: %d</string>
+    <string name="touchscreen_smoothness_title">触摸阻尼</string>
+    <string name="touchscreen_smoothness_summary">平滑度: %d</string>
 </resources>
