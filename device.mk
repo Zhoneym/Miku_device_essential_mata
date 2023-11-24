@@ -413,13 +413,12 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.2-service.mata
 
 # VNDK
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v33.so
-
+PRODUCT_TARGET_VNDK_VERSION := 29 30
+PRODUCT_EXTRA_VNDK_VERSIONS := $(PRODUCT_TARGET_VNDK_VERSION)
 # Update this list with what each blob is actually for
 # libstdc++: hexagon DSP blobs
 PRODUCT_PACKAGES += \
-    libstdc++_vendor
+    libstdc++.vendor
 
 # QCOM
 PRODUCT_COPY_FILES += \
