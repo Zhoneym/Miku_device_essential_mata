@@ -32,5 +32,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := essential/mata/mata:8.1.0/OPM1.180104.092/224:user/release-keys
 
-TARGET_WITH_KERNEL_SU := true
 MIKU_GAPPS := true
